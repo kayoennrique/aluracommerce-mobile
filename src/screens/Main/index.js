@@ -5,17 +5,15 @@ import { styles } from './styles';
 import { Feather } from 'react-native-vector-icons'
 import MaterialCommunityIcons from 'react-native-vector-icons/Feather';
 import { useContext } from 'react';
-import { GlobalContext } from '../../contexts/GlobalContext';
 
 export default function Main({ navigation }) {
   const latestVisas = [];
-  const { amount, name } = useContext(GlobalContext)
 
   return (
     <View style={styles.container}>
       <StatusBar />
       <View style={styles.titleArea}>
-        <Text style={styles.title}>Olá, {name}</Text>
+        <Text style={styles.title}>Olá, Nome</Text>
         <View style={styles.cartArea}>
           <TouchableOpacity onPress={() => { }}>
             <Feather name="shopping-cart" size={30} color="#fff" style={styles.cartIcon} />

@@ -1,10 +1,10 @@
-import { InfoProvider } from "./src/contexts/GlobalContext";
+import { ProviderTheme } from "./src/contexts/ContextTheme";
 import Routes from "./src/routes";
 
 export default function App() {
   return (
-    <InfoProvider>
+    <ProviderTheme>
       <Routes />
-    </InfoProvider>
+    </ProviderTheme>
   );
 }
