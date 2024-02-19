@@ -7,7 +7,7 @@ export default function Settings({ navigation }) {
 
   return (
     <View style={styles.container}>
-      <Text style={styles.titulo}>Configuração</Text>
+      <Text style={styles.title}>Configuração</Text>
 
       <View style={styles.inputArea}>
         <Text style={styles.subtitle}>Tema: Escuro</Text>
@@ -19,4 +19,3 @@ export default function Settings({ navigation }) {
     </View>
   );
 }
-

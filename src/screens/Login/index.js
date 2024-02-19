@@ -1,15 +1,18 @@
 import { useState } from "react";
 import { Text, View, TextInput, TouchableOpacity, StatusBar } from 'react-native';
 import { styles } from './styles';
+import { useContext } from "react";
+import { GlobalContext } from "../../contexts/GlobalContext";
 
 export default function Login({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const { amount, name, setName } = useContext(GlobalContext);
 
   return (
     <View style={styles.container}>
       <StatusBar />
-      <Text style={styles.title}>Login</Text>
+      <Text style={styles.title}>Login = {amount}</Text>
 
       <View style={styles.inputArea}>
         <TextInput
@@ -17,8 +20,8 @@ export default function Login({ navigation }) {
           placeholder="Email"
           placeholderTextColor="#999"
           autoCapitalize="none"
-          value={email}
-          onChangeText={setEmail}
+          value={name}
+          onChangeText={setName}
         />
         <TextInput
           style={styles.input}

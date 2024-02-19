@@ -4,16 +4,18 @@ import { products } from './products';
 import { styles } from './styles';
 import { Feather } from 'react-native-vector-icons'
 import MaterialCommunityIcons from 'react-native-vector-icons/Feather';
-
+import { useContext } from 'react';
+import { GlobalContext } from '../../contexts/GlobalContext';
 
 export default function Main({ navigation }) {
-  const latestVisas = []
+  const latestVisas = [];
+  const { amount, name } = useContext(GlobalContext)
 
   return (
     <View style={styles.container}>
       <StatusBar />
       <View style={styles.titleArea}>
-        <Text style={styles.title}>Olá, NOME</Text>
+        <Text style={styles.title}>Olá, {name}</Text>
         <View style={styles.cartArea}>
           <TouchableOpacity onPress={() => { }}>
             <Feather name="shopping-cart" size={30} color="#fff" style={styles.cartIcon} />
@@ -47,11 +49,10 @@ export default function Main({ navigation }) {
                   showsHorizontalScrollIndicator={false}
                 />
               </View>}
-            <Text style={[styles.title, { paddingLeft: 16 }]}>products</Text>
+            <Text style={[styles.title, { paddingLeft: 16 }]}>Produtos</Text>
           </View>
         }
       />
     </View>
   );
 }
-

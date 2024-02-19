@@ -1,7 +1,10 @@
+import { InfoProvider } from "./src/contexts/GlobalContext";
 import Routes from "./src/routes";
 
 export default function App() {
   return (
-    <Routes />
+    <InfoProvider>
+      <Routes />
+    </InfoProvider>
   );
 }
