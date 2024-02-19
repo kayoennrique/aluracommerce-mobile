@@ -4,15 +4,15 @@ import { useState, useContext } from 'react';
 import { ContextTheme } from '../../contexts/ContextTheme';
 
 export default function Settings({ navigation }) {
-  const [state, setState] = useState(true);
-  const { currentTheme, setCurrentTheme } = useContext(ContextTheme)
+  const { currentTheme, setCurrentTheme, themeChosen } = useContext(ContextTheme);
+  const style = styles(themeChosen);
 
   return (
-    <View style={styles.container}>
-      <Text style={styles.title}>Configuração</Text>
+    <View style={style.container}>
+      <Text style={style.title}>Configuração</Text>
 
-      <View style={styles.inputArea}>
-        <Text style={styles.subtitle}>Tema: {currentTheme}</Text>
+      <View style={style.inputArea}>
+        <Text style={style.subtitle}>Tema: {currentTheme}</Text>
         <Switch
           onValueChange={() =>
             currentTheme === 'dark' ?
