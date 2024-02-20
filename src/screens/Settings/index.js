@@ -1,10 +1,14 @@
 import { Text, View, Switch } from 'react-native';
 import { styles } from './styles';
-import { useState, useContext } from 'react';
+import { useContext } from 'react';
 import { ContextTheme } from '../../contexts/ContextTheme';
 
 export default function Settings({ navigation }) {
-  const { currentTheme, setCurrentTheme, themeChosen } = useContext(ContextTheme);
+  const {
+    currentTheme,
+    themeChosen,
+    saveThemeOnDevice
+  } = useContext(ContextTheme);
   const style = styles(themeChosen);
 
   return (
@@ -16,8 +20,8 @@ export default function Settings({ navigation }) {
         <Switch
           onValueChange={() =>
             currentTheme === 'dark' ?
-              setCurrentTheme('light') :
-              setCurrentTheme('dark')
+              saveThemeOnDevice('light') :
+              saveThemeOnDevice('dark')
           }
           value={currentTheme === 'dark' ? true : false}
         />
