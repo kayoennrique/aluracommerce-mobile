@@ -7,15 +7,20 @@ import MaterialCommunityIcons from 'react-native-vector-icons/Feather';
 import { useContext } from 'react';
 import { ContextTheme } from '../../contexts/ContextTheme';
 import { ContextAuth } from '../../contexts/ContextAuth';
+import { ContextProducts } from '../../contexts/ContextProducts';
 
 export default function Main({ navigation }) {
-  const latestVisas = [];
-
   const { themeChosen } = useContext(ContextTheme);
-
   const style = styles(themeChosen);
 
-  const { user } = useContext(ContextAuth);
+  const {
+    user
+  } = useContext(ContextAuth)
+
+  const {
+    amount,
+    latestVisas
+  } = useContext(ContextProducts)
 
   return (
     <View style={style.container}>
@@ -26,9 +31,10 @@ export default function Main({ navigation }) {
           <TouchableOpacity onPress={() => { }}>
             <Feather name="shopping-cart" size={30} color="#fff" style={style.cartIcon} />
           </TouchableOpacity>
-          <View style={style.cartQuantityArea}>
-            <Text style={style.cartQuantity}>0</Text>
-          </View>
+          {amount > 0 &&
+            <View style={style.cartQuantityArea}>
+              <Text style={style.cartQuantity}>{amount}</Text>
+            </View>}
           <TouchableOpacity onPress={() => navigation.navigate('Configurações')} style={style.iconArea} >
             <MaterialCommunityIcons name="settings" size={30} color="#fff" style={style.icon} />
           </TouchableOpacity>
