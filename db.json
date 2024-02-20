@@ -1,0 +1,9 @@
+{
+  "products": [
+    {
+      "image": "imagemTenis",
+      "text": "Tenis bacana",
+      "price": 100.00
+    }
+  ]
+}
