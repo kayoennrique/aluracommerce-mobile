@@ -1,7 +1,8 @@
 import { useState, useContext } from "react";
-import { Text, View, TextInput, TouchableOpacity, StatusBar } from 'react-native';
+import { Text, View, TextInput, TouchableOpacity, StatusBar, Alert } from 'react-native';
 import { styles } from './styles';
 import { ContextTheme } from "../../contexts/ContextTheme";
+import { ContextAuth } from "../../contexts/ContextAuth";
 
 export default function Login({ navigation }) {
   const [email, setEmail] = useState("");
@@ -11,11 +12,23 @@ export default function Login({ navigation }) {
 
   const style = styles(themeChosen);
 
+  const { login } = useContext(ContextAuth);
+
+  function loggingIntoSystem() {
+    const result = login(email, password);
+
+    if (result == 'Ok!') {
+      navigation.navigate('Principal')
+    }
+    else {
+      Alert.alert(result)
+    }
+  }
+
   return (
     <View style={style.container}>
       <StatusBar />
       <Text style={style.title}>Login</Text>
-
       <View style={style.inputArea}>
         <TextInput
           style={style.input}
@@ -32,12 +45,13 @@ export default function Login({ navigation }) {
           autoCapitalize="none"
           value={password}
           onChangeText={setPassword}
+          secureTextEntry={true}
         />
       </View>
 
       <TouchableOpacity
         style={style.button}
-        onPress={() => navigation.navigate('Principal')}
+        onPress={() => loggingIntoSystem()}
       >
         <Text style={style.buttonText}>Entrar</Text>
       </TouchableOpacity>

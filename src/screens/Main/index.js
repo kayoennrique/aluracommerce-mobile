@@ -6,6 +6,7 @@ import { Feather } from 'react-native-vector-icons'
 import MaterialCommunityIcons from 'react-native-vector-icons/Feather';
 import { useContext } from 'react';
 import { ContextTheme } from '../../contexts/ContextTheme';
+import { ContextAuth } from '../../contexts/ContextAuth';
 
 export default function Main({ navigation }) {
   const latestVisas = [];
@@ -14,11 +15,13 @@ export default function Main({ navigation }) {
 
   const style = styles(themeChosen);
 
+  const { user } = useContext(ContextAuth);
+
   return (
     <View style={style.container}>
       <StatusBar />
       <View style={style.titleArea}>
-        <Text style={style.title}>Olá, Nome</Text>
+        <Text style={style.title}>Olá, {user.name}</Text>
         <View style={style.cartArea}>
           <TouchableOpacity onPress={() => { }}>
             <Feather name="shopping-cart" size={30} color="#fff" style={style.cartIcon} />

@@ -1,10 +1,13 @@
+import { ContextAuthProvider } from "./src/contexts/ContextAuth";
 import { ProviderTheme } from "./src/contexts/ContextTheme";
 import Routes from "./src/routes";
 
 export default function App() {
   return (
     <ProviderTheme>
-      <Routes />
+      <ContextAuthProvider>
+        <Routes />
+      </ContextAuthProvider>
     </ProviderTheme>
   );
 }
