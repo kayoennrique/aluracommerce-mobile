@@ -10,10 +10,10 @@ export function ContextAuthProvider({ children }) {
       password == 1234
     ) {
       setUser({
-        name: 'Kayo',
+        name: 'Kayo Ennrique Pereira',
         email: email,
-        address: 'Rua 9',
-        telephone: '(21)978936167'
+        address: 'Rua dos Bacanas',
+        telephone: '+55 (21) 97893-6167'
       })
       return 'Ok!';
     }

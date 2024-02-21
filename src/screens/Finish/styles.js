@@ -5,9 +5,10 @@ export const styles = (theme) => {
   return StyleSheet.create({
     container: {
       flex: 1,
+      padding: 16,
       backgroundColor: theme.bottom,
       alignItems: 'stretch',
-      justifyContent: 'center',
+      justifyContent: 'space-between',
     },
     titleArea: {
       width: '100%',
@@ -22,65 +23,52 @@ export const styles = (theme) => {
       fontWeight: 'bold',
       color: theme.title,
     },
-    list: {
-      flex: 1,
-      width: '100%',
-    },
-    latestVisas: {
-      marginBottom: 16,
-      paddingVertical: 16,
-      backgroundColor: theme.latestVisas,
-    },
-    titleLatestVisas: {
-      fontSize: 18,
-      fontWeight: 'bold',
-      color: theme.title,
-      marginHorizontal: 16,
-      marginBottom: 8,
-    },
-    cartArea: {
-      flexDirection: 'row',
-      alignItems: 'flex-end',
-      justifyContent: 'flex-end',
-    },
-    cartIcon: {
-      fontSize: 30,
-      fontWeight: 'bold',
-      color: theme.title,
-    },
-    cartQuantityArea: {
-      backgroundColor: 'red',
-      borderRadius: 10,
-      width: 20,
-      height: 20,
-      alignItems: 'center',
-      justifyContent: 'center',
-    },
-    cartQuantity: {
-      fontSize: 12,
-      fontWeight: 'bold',
-      color: "#fff",
-    },
-    iconArea: {
-      marginLeft: 16,
-    },
-    icon: {
-      color: theme.text,
-      fontSize: 30,
-    },
     button: {
-      margin: 16,
-      backgroundColor: theme.button,
       marginBottom: 32,
       paddingVertical: 16,
       borderRadius: 10,
-      alignItems: 'center'
+      backgroundColor: theme.button,
+      justifyContent: 'flex-end',
     },
     buttonText: {
       fontSize: 18,
       fontWeight: 'bold',
       color: theme.black,
-      textAlign: 'center'
+      textAlign: 'center',
+    },
+    viewComponent: {
+      backgroundColor: theme.gray,
+      padding: 16,
+      width: '100%',
+      marginBottom: 16,
+    },
+    finishAreaTitle: {
+      flexDirection: 'row',
+      alignItems: 'center',
+    },
+    finishTitle: {
+      fontSize: 18,
+      fontWeight: 'bold',
+      color: theme.title,
+      marginLeft: 8,
+    },
+    finishIcon: {
+      marginBottom: 8,
+      color: theme.title,
+      fontSize: 26,
+    },
+    titleArea: {
+      width: '100%',
+      marginBottom: 16,
+    },
+    title: {
+      fontSize: 20,
+      fontWeight: 'bold',
+      color: theme.title,
+    },
+    finishTxt: {
+      fontSize: 16,
+      color: theme.title,
     }
   });
-}
+};

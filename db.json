@@ -1,16 +1,3 @@
 {
-  "products": [
-    {
-      "id": "2769",
-      "image": 3,
-      "text": "Tenis bacana",
-      "price": 100
-    },
-    {
-      "id": "61bd",
-      "image": 4,
-      "text": "Mesa chique",
-      "price": 200
-    }
-  ]
+  "products": []
 }

@@ -8,6 +8,7 @@ const theme = {
   latestVisas: '#093245',
   button: '#A3FEBF',
   input: '#FFFFFF',
+  bgFinish: '#040126ff',
 }
 
 const dark = {
@@ -20,6 +21,7 @@ const dark = {
   latestVisas: '#093245',
   button: '#A3FEBF',
   input: '#FFFFFF',
+  bgFinish: '#040126ff',
 }
 
 const light = {

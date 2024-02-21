@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import Constants from 'expo-constants';
 
 export const styles = (theme) => {
   return StyleSheet.create({
@@ -27,7 +28,7 @@ export const styles = (theme) => {
       marginBottom: 15,
       padding: 10,
       borderRadius: 5,
-      color: theme.preto,
+      color: theme.black,
     },
     button: {
       height: 40,
